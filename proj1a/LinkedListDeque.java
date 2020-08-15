@@ -85,7 +85,7 @@ public class LinkedListDeque<T>{
         else {
             T removeditem = (T)sentinel.prev.item;
             sentinel.prev = sentinel.prev.prev;
-            sentinel.prev.next = null;
+            sentinel.prev.next = sentinel;
             size = size - 1;
             return removeditem;
         }
