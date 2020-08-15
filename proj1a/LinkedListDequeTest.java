@@ -91,28 +91,28 @@ public class LinkedListDequeTest {
 		a.printDeque();
 		System.out.println(" ");
 
-		a.addFirst(1);
+		a.addLast(1);
 		a.printDeque();
 		System.out.println(" ");
 
-		a.addFirst(2);
+		a.addLast(2);
 		a.printDeque();
 		System.out.println(" ");
 	}
 	public static void removetest() {
 		LinkedListDeque<Integer> a = new LinkedListDeque<Integer>();
 
-
 		a.addLast(6);
 		a.printDeque();
 		System.out.println(" ");
 
-		a.addFirst(1);
+		a.addLast(1);
 		a.printDeque();
 		System.out.println(" ");
 
-		a.addFirst(2);
+		a.addLast(2);
 		a.printDeque();
+		System.out.println(" ");
 
 
 
@@ -120,9 +120,7 @@ public class LinkedListDequeTest {
 		System.out.println(" ");
 		a.printDeque();
 
-		int b=a.getRecursive(0);
-		System.out.println(" ");
-		System.out.println(b);
+
 
 
 	}
