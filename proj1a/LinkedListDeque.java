@@ -1,5 +1,5 @@
 public class LinkedListDeque<T>{
-    private class Node<T>{
+    private class Node{
         public Node prev;
         public T item;
         public Node next;
@@ -12,7 +12,7 @@ public class LinkedListDeque<T>{
     private Node sentinel;
     private int size;
     public LinkedListDeque(){
-        sentinel = new Node(null,1,null);
+        sentinel = new Node(null,null,null);
         size = 0;
     }
 
@@ -71,10 +71,11 @@ public class LinkedListDeque<T>{
         }
         else {
 
-            T removeditem = (T) sentinel.next.item;
+            T removeditem = sentinel.next.item;
             sentinel.next = sentinel.next.next;
             size = size - 1;
             return removeditem;
+
         }
     }
 
@@ -83,8 +84,8 @@ public class LinkedListDeque<T>{
             return null;
         }
         else {
-            T removeditem = (T)sentinel.prev.item;
-            sentinel.prev = sentinel.prev.prev;
+            T removeditem = sentinel.prev.item;
+            sentinel.prev = sentinel.prev.prev.prev;
             sentinel.prev.next = sentinel;
             size = size - 1;
             return removeditem;
@@ -100,7 +101,7 @@ public class LinkedListDeque<T>{
             for(int i = index+1; i > 0; i--){
                 sentinel_al = sentinel_al.next;
             }
-            return (T)sentinel_al.item;
+            return sentinel_al.item;
         }
     }
     private Node sen = sentinel;
@@ -109,7 +110,7 @@ public class LinkedListDeque<T>{
             return null;
         }
         else if(index == 0 ){
-            return (T)sen.next.item;
+            return sen.next.item;
         }
         else {
             sen = sen.next;
