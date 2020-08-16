@@ -27,7 +27,7 @@ public class ArrayDeque<T> {
             nextLast = currentlast + 1;
             items = newarray;
         } else {
-            System.arraycopy(items,0,newarray,0,items.length);
+            System.arraycopy(items,currentfirst,newarray,0,size);
             nextFirst = newarray.length-1;
             nextLast = size;
             items = newarray;
